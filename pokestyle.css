@@ -1,0 +1,224 @@
+:root {
+    --main-bg-color:#17202A;
+    --selected-main-color:#1DA1F2;
+    --main-text-color:#fff;
+    --border-color:#3A444C;
+    --secondary-text-color:#8899A6;
+    --danger-color: #ff3366;
+}
+
+@font-face {
+    font-family: pixels;
+    src: url('src/PressStart2P-Regular.ttf')
+}
+
+
+*{
+    padding:0;
+    margin:0;
+    font-family: pixels;
+    font-weight: 400;
+}
+
+body{
+    height:100vh;
+    margin:0;
+    background-color: var(--main-bg-color);
+}
+
+#mainContainer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2{
+    margin-top:8%;
+    margin-bottom: 40px;
+    color:#fff
+}
+
+#gameContainer{
+    display:grid;
+    grid-template-rows:repeat(4,1fr);
+    grid-template-columns: repeat(5, 1fr);
+    gap:15px;
+}
+.box{
+
+    position: relative;
+}
+.pkmn{
+    border: 1px dashed var(--border-color);
+    border-radius: 1em;
+    transition: border-color 0.3s ease
+}
+
+
+.pkmn:hover{
+    cursor:pointer;
+}
+img{
+    height: 120px;
+    width: 120px;
+    border:none;
+}
+img[src=""]{
+    display:none;
+    user-select: none;
+
+}
+
+#typeChange{
+    width: 400px;
+    height: 250px;
+    overflow-y: auto;
+    overflow-x:hidden;
+    transform: translateY(30%);
+    position:absolute;
+    display:none;
+}
+
+
+
+
+.visible{
+    display:inline !important;
+}
+.option{
+    background-color: #fff;
+    color: black;
+    display: block;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.option:hover{
+    background-color: var(--selected-main-color);
+}
+
+
+
+.category{
+    background-color: var(--secondary-text-color);
+    color: black;
+    display: block;
+    padding: 12px;
+    pointer-events: none;
+}
+
+
+.placeholder{
+    font-size:25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color:#fff;
+    text-align: center;
+    
+}
+
+.placeholder:hover{
+    cursor:pointer;
+    user-select: none;
+}
+
+#searchInput{
+    background-color: #fff;
+    color: black;
+    display: block;
+    padding: 12px;
+    width: 400px;
+}
+
+#pokemonInsert{
+    width: 400px;
+    height: 250px;
+    overflow-y: auto;
+    overflow-x:hidden;
+    transform: translateY(30%);
+    position:absolute;
+    display:none;
+    cursor: pointer;
+}
+#pokemonInsert div{
+    background-color: #fff;
+    color: black;
+    /* display: block; */
+    padding: 12px;
+}
+
+#pokemonInsert div:hover{
+    background-color: var(--selected-main-color);
+}
+
+#searchPokemon{
+    color: black;
+    background-color: #fff;
+    display: block;
+    padding: 12px;
+    width: 400px;
+}
+
+.pkmn_option{
+    /* display: none; */
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    background-color: #fff;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.pkmn_visible{
+    display:flex !important;
+}
+
+.sprite_small{
+    width: 48px;
+    height:48px;
+}
+
+.sprite_big{
+    width: 128px;
+    height: 128px;
+}
+.pokemon_name{
+    margin-left:5%;
+}
+
+.correct_guess{
+    border: solid 1px greenyellow !important;
+    transition: border-color 0.3s ease
+}
+
+.unselectable{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#pp_container{
+    font-size:25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color:#fff;
+}
+
+.wrong_guess{
+    border: 1px solid var(--danger-color);
+    transition: border 0.3s ease 
+}
+
+.dice:hover{
+    cursor: pointer;
+}

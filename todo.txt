@@ -1,0 +1,2 @@
+checking system doesnt always give possible combinations 
+fix ^^^^

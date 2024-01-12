@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>poke game</title>
+    <link rel="stylesheet" href = "pokestyle.css">
+    <script src="jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script src="pkmn.js"></script>
+
+</head>
+<body>
+    <div id="mainContainer">
+        <h2>Pokegame</h2>
+        <div id="gameContainer">
+            <div class="box" data-type="pokeball"><img src="img/pokeball_sprite.png"></div>
+
+
+            <div id = "t1"class="box type top" data-pokemon-rule="null">
+                <img class = "image" src="" alt="">
+                <div class="placeholder">Rule</div>
+            </div>
+            
+            <div id = "t2" class="box type top" data-pokemon-rule="null">
+                <img class = "image" src="" alt="">
+                <div class="placeholder">Rule</div>
+            </div>
+
+            <div id = "t3" class="box type top" data-pokemon-rule="null">
+                <img class = "image" src="" alt="">
+                <div class="placeholder">Rule</div>
+            </div>
+
+            <div class="box" ><img src="img/pokeball_sprite.png"></div>
+            
+            <div id = "l1" class="box type left" data-pokemon-rule="null">
+                <img class = "image" src="" alt="">
+                <div class="placeholder">Rule</div>
+            </div>
+
+            <div class="box pkmn" data-type1="" data-type2="" data-generation="" data-left="l1" data-top="t1">
+                <img class="sprite_big" src="">
+            </div>
+            <div class="box pkmn" data-type1="" data-type2="" data-generation="" data-left="l1" data-top="t2">
+                <img class="sprite_big" src="">
+            </div>
+            <div class="box pkmn" data-type1="" data-type2="" data-generation="" data-left="l1" data-top="t3">
+                <img class="sprite_big" src="">
+            </div>
+            <div class="box"></div>
+
+            <div id = "l2" class="box type left" data-pokemon-rule="null">
+                <img class = "image" src="" alt="">
+                <div class="placeholder">Rule</div>
+            </div>
+
+            <div class="box pkmn" data-type1="" data-type2="" data-generation="" data-left="l2" data-top="t1">
+                <img class="sprite_big" src="">
+            </div>
+            <div class="box pkmn" data-type1="" data-type2="" data-generation="" data-left="l2" data-top="t2">
+                <img class="sprite_big" src="">
+            </div>
+            <div class="box pkmn" data-type1="" data-type2="" data-generation="" data-left="l2" data-top="t3">
+                <img class="sprite_big" src="">
+            </div>
+
+            <div id="random_game"class="box" >
+                <img class="sprite_big dice" src="img/random.png">
+            </div>
+
+            <div id = "l3" class="box type left" data-pokemon-rule="null">
+                <img class = "image" src="" alt="">
+                <div class="placeholder">Rule</div>
+            </div>
+
+            <div  class="box pkmn" data-type1="" data-type2="" data-generation="" data-left="l3" data-top="t1">
+                <img  class="sprite_big" src="">
+            </div>
+            <div class="box pkmn" data-type1="" data-type2="" data-generation="" data-left="l3" data-top="t2">
+                <img class="sprite_big" src="">
+            </div>
+            <div class="box pkmn" data-type1="" data-type2="" data-generation="" data-left="l3" data-top="t3">
+                <img class="sprite_big" src="">
+            </div>
+            <div class="box" >
+                <div id="pp_container">
+                    10/10 PP
+                </div>
+            </div>
+        </div>
+        
+        <div id = "typeChange">
+            <input type="text" id="searchInput" placeholder="Search...">
+            
+            <div class="category type_cat">Type</div>
+
+            <div id="null" class="option type_rule">Mono-type</div>
+            <div id="normal" class="option type_rule">Normal</div>
+            <div id="grass" class="option type_rule">Grass</div>
+            <div id="fire" class="option type_rule">Fire</div>
+            <div id="water" class="option type_rule">Water</div>
+            <div id="fairy" class="option type_rule">Fairy</div>
+            <div id="dark" class="option type_rule">Dark</div>
+            <div id="psychic" class="option type_rule">Psychic</div>
+            <div id="ghost" class="option type_rule">Ghost</div>
+            <div id="poison" class="option type_rule">Poison</div>
+            <div id="flying" class="option type_rule">Flying</div>
+            <div id="fighting" class="option type_rule">Fighting</div>
+            <div id="ground" class="option type_rule">Ground</div>
+            <div id="rock" class="option type_rule">Rock</div>
+            <div id="steel" class="option type_rule">Steel</div>
+            <div id="dragon" class="option type_rule">Dragon</div>
+            <div id="ice" class="option type_rule">Ice</div>
+            <div id="electric" class="option type_rule">Electric</div>
+            <div id="bug" class="option type_rule">Bug</div>
+
+            <div class="category gen_cat">Generation</div>
+
+            <div id="generation-i" class="option gen_rule">Kanto</div>
+            <div id="generation-ii" class="option gen_rule">Johto</div>
+            <div id="generation-iii" class="option gen_rule">Hoenn</div>
+            <div id="generation-iv" class="option gen_rule">Sinnoh</div>
+            <div id="generation-v" class="option gen_rule">Unova</div>
+            <div id="generation-vi" class="option gen_rule">Kalos</div>
+            <div id="generation-vii" class="option gen_rule">Alola</div>
+            <div id="generation-viii" class="option gen_rule">Galar</div>
+            <div id="generation-ix" class="option gen_rule">Paldea</div>
+
+            <div class="category evo_cat">Evolution</div>
+            <div id="trade" class="option evo_rule">Trade</div>
+            <div id="use-item" class="option evo_rule">Use item</div>
+        </div>
+
+        <div id = "pokemonInsert">
+            <input type="text" id="searchPokemon" placeholder="Search...">
+            
+        </div>
+    </div>
+</body>
+</html>
